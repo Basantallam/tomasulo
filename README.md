@@ -105,6 +105,5 @@ STR,F1,2
 ```
 ### Example Output:
 
-<img width="490" alt="tomasulo" src="https://user-images.githubusercontent.com/30272808/162545638-3dfa1bee-c25b-4fed-84f9-da714b83f076.png">
-
+<img width="490" alt="tomasulo" src="https://user-images.githubusercontent.com/30272808/162545950-c5b3dcff-1fb7-4165-b1bc-72a5cf36038a.png">
 
