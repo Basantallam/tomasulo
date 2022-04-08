@@ -88,8 +88,9 @@ In the Anim.js, we have the doCycle function, which is a caller function that ca
         writeResult();
         endExecution();
     }
-    ```
-    ## Test Cases:
+```
+## Test Cases:
+
 ```
 LD ,F1,3		
 
@@ -102,7 +103,9 @@ ADD ,F1,F2,F2
 SUB ,F1,F2,F3			
 
 STR,F1,2
+
 ```
+
 ### Example Output:
 
 <img width="490" alt="tomasulo" src="https://user-images.githubusercontent.com/30272808/162545950-c5b3dcff-1fb7-4165-b1bc-72a5cf36038a.png">
