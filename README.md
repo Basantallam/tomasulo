@@ -12,7 +12,7 @@
  
 
 
-##Steps to Run:
+## Steps to Run:
 
 Terminal: 
 ```
@@ -92,10 +92,15 @@ In the Anim.js, we have the doCycle function, which is a caller function that ca
     ## Test Cases:
 ```
 LD ,F1,3		
+
 LD ,F2,6	
+
 LD,F3,1		
+
 ADD ,F1,F2,F2	
+
 SUB ,F1,F2,F3			
+
 STR,F1,2
 ```
 ### Example Output:
