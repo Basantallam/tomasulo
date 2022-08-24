@@ -1,5 +1,9 @@
 # This project is a simulation of how the Tomasulo architecture works.
 
+If you would like to learn more about Tomasulo algorithm check the following link:
+
+https://en.wikipedia.org/wiki/Tomasulo%27s_algorithm
+
 ## Steps to Develop: 
 
 1) Studied the Tomasulo Architecture and we understood how the algorithm works.
@@ -10,11 +14,14 @@
 6) Each team member was then assigned some of the functions, and we implemented them and tested them individually (unit testing).
 7) After testing and debugging all the functions individually, we started doing “integration testing”, where we tested the interaction of our functions together and ensured smooth execution.
  
-
+## Technologies We Used:
+- React 
+- Node JS
 
 ## Steps to Run:
 
 Terminal: 
+
 ```
 cd src
 npm install 
@@ -32,6 +39,7 @@ Wait till it runs on localhost.
 
 
 ## Approach:
+
 The main data structure we used is arrays of json objects and these arrays are:
 “main” has all the instructions
 “add” is for the ADD/SUB reservation station
@@ -43,7 +51,7 @@ The main data structure we used is arrays of json objects and these arrays are:
 
 ## We have 4 main functions: issue, startExecution, endExecution and writeResult.
 
-### In the "issue" function we do the following:
+### In the **"issue"** function we do the following:
 - We have a pointer initially pointing at the first instruction.
 - We check if there is an available spot in the reservation station the instruction needs.
 - If there is an available spot, we set the Issue time of this instruction to the current cycle, and we put the instruction in the available spot, mark it as busy.
@@ -51,18 +59,18 @@ The main data structure we used is arrays of json objects and these arrays are:
 - Lastly, we check the register the instruction will write back to after it’s done, and we put the tag of the reservation station spot in the register’s Q section indicating that the value of this register is pending.
 - If the instruction was issued, we increment the pointer.
 
-### In the "start execution" function, we do the following:
+### In the **"start execution"** function, we do the following:
 - We loop on all the stations and check their Q values.
 - If all Q values of a row of a station are empty, this means this instruction can start execution immediately (if it hasn’t already). 
 - We set the start time of this instruction to the current cycle
 - We also calculate the result of execution and store it temporarily in a variable called temp that is not displayed in the front end. 
 
-### In the "end execution" function, we do the following:
+### In the **"end execution"** function, we do the following:
 - We loop on all reservation stations and check if the current cycle = instruction latency + start time.
 - If this is the case, we update the instructions end time to the current cycle.
 
 
-### In the "write result" function, we do the following:
+### In the **"write result"** function, we do the following:
 - Find the first  instruction that finished execution but did not write back yet.
 - Set its write back time to the current cycle.
 - Update the registers and reservation stations that are dependent on this result (registers and reservation stations carrying my tag.)
@@ -79,7 +87,7 @@ The main data structure we used is arrays of json objects and these arrays are:
 - Anim.js: this page displays the Tomasulo Algorithm cycle by cycle when the user presses next the page update its content with that of the next cycle 
 
 In the Anim.js, we have the doCycle function, which is a caller function that calls the rest of our functions and initiates the steps executed in every cycle
-```
+```javascript
     function doCycle() {
         cycle=cycleFront+1;
         setCycleFront(cycleFront + 1);
@@ -108,5 +116,5 @@ STR,F1,2
 
 ### Example Output:
 
-<img width="490" alt="tomasulo" src="https://user-images.githubusercontent.com/30272808/162545950-c5b3dcff-1fb7-4165-b1bc-72a5cf36038a.png">
+<img width="800" alt="tomasulo" src="https://user-images.githubusercontent.com/30272808/162545950-c5b3dcff-1fb7-4165-b1bc-72a5cf36038a.png">
 
